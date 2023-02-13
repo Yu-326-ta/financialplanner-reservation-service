@@ -69,9 +69,15 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.7.0)
+      execjs (~> 2)
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
+    bootstrap (5.0.2)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.9.2, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -90,6 +96,8 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    execjs (2.8.1)
+    ffi (1.15.5)
     globalid (1.0.1)
       activesupport (>= 5.0)
     hpricot (0.8.6)
@@ -139,6 +147,7 @@ GEM
     parallel (1.22.1)
     parser (3.2.0.0)
       ast (~> 2.4.1)
+    popper_js (2.11.6)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -221,6 +230,14 @@ GEM
       rubocop-capybara (~> 2.17)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -275,6 +292,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap (~> 5.0.2)
   capybara
   debug
   html2slim
@@ -288,6 +306,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  sassc-rails
   selenium-webdriver
   slim-rails
   sprockets-rails

@@ -1,15 +1,29 @@
-.center.jumbotron
-  h1
-    | Welcome to the financial planner reservation service
-  h2
-    |  お金の悩みを相談してみませんか?
+.p-3.p-sm-5.mb-4.bg-img
+  .center.jumbotron.
+    h1
+      | Welcome to the financial planner reservation service
+    h2
+      |  お金の悩みを相談してみませんか?
 
-  .user 
-  p
-    | ファイナンシャルプランナーにご相談したい方
-  = link_to "Sign up now!", '#', class: "btn btn-lg btn-primary"
-
-  .planner
-  p
-    | ファイナンシャルプランナーの方
-  = link_to "Sign up now!", '#', class: "btn btn-lg btn-primary"
+.register
+    .row
+      .col-6
+        .client
+          .text
+            h4
+              | ファイナンシャルプランナーに<br>ご相談したい方
+          .button  
+            .btn-create
+              = link_to "新規登録", '#', class: "btn btn-lg btn-warning"
+            .btn-login
+              = link_to "ログイン", '#', class: "btn btn-lg btn-outline-warning"
+      .col-6
+        .planner
+          .text
+            h4
+              | ファイナンシャルプランナーの方
+          .button 
+            .btn-create
+              = link_to "新規登録", '#', class: "btn btn-lg btn-warning"
+            .btn-login
+              = link_to "ログイン", '#', class: "btn btn-lg btn-outline-warning"

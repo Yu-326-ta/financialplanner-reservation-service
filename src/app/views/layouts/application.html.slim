@@ -8,5 +8,8 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  body
+    link rel="stylesheet" href="/assets/jumbotron-bgimage.scss"
+  = render 'layouts/header'
+  body.container
     = yield
+ 
