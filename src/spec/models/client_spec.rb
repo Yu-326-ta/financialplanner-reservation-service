@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Client, type: :model do
-  let(:client) { Client.new(name: 'Example Client', email: 'client@example.com') }
+  let(:client) { Client.new(name: 'Example Client', email: 'client@example.com',
+                            password: "foobar", password_confirmation: "foobar") }
  
   it 'clientが有効であること' do
     expect(client).to be_valid
@@ -48,5 +49,15 @@ RSpec.describe Client, type: :model do
     client.email = mixed_case_email
     client.save
     expect(client.reload.email).to eq mixed_case_email.downcase
+  end
+
+  it 'passwordが必須であること' do
+    client.password = client.password_confirmation = ' ' * 6
+    expect(client).to_not be_valid
+  end
+ 
+  it 'passwordは6文字以上であること' do
+    client.password = client.password_confirmation = 'a' * 5
+    expect(client).to_not be_valid
   end
 end
