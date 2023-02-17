@@ -1,2 +1,19 @@
-h1 Clients#new
-p Find me in app/views/clients/new.html.slim
+.row
+  h1 新規登録
+  .col
+    = form_with(model: @client) do |f| 
+      = render 'shared/error_messages' 
+
+      = f.label :name 
+      = f.text_field :name, class: 'form-control' 
+
+      = f.label :email 
+      = f.email_field :email, class: 'form-control'
+
+      = f.label :password 
+      = f.password_field :password, class: 'form-control'
+
+      = f.label :password_confirmation, "Confirmation" 
+      = f.password_field :password_confirmation, class: 'form-control'
+
+      = f.submit '新規登録', class: 'btn btn-warning'
