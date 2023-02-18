@@ -16,6 +16,9 @@ gem 'sassc-rails'
 # Install ridgepole
 gem 'ridgepole'
 
+# exchange errormesage to japanese
+gem 'rails-i18n'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 

@@ -9,6 +9,12 @@ Bundler.require(*Rails.groups)
 module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 6.0
+
+    # 日本語の言語設定。この一行を追加。
+    config.i18n.default_locale = :ja
+
+    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
     config.generators.template_engine = :slim #slimに変更
