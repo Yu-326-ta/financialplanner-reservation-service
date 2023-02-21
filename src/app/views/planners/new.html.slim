@@ -10,13 +10,13 @@
       = f.label :email 
       = f.email_field :email, class: 'form-control'
 
-      = f.label :discription
+      = f.label :discription, '自己紹介'
       = f.text_area :discription, class: 'form-control', size: '40x15'
 
       = f.label :password 
       = f.password_field :password, class: 'form-control'
 
-      = f.label :password_confirmation, "Confirmation" 
+      = f.label :password_confirmation, 'パスワード確認'
       = f.password_field :password_confirmation, class: 'form-control'
 
       = f.submit '新規登録', class: 'btn btn-warning'
