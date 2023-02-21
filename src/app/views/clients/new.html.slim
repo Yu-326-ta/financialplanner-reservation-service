@@ -2,7 +2,7 @@
   h1 新規登録
   .col
     = form_with(model: @client) do |f| 
-      = render 'shared/error_messages' 
+      = render 'shared/clients_error_messages' 
 
       = f.label :name 
       = f.text_field :name, class: 'form-control' 
