@@ -10,6 +10,8 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
+      reset_session
+      log_in_client @client
       flash[:info] = "マイページへようこそ"
       redirect_to clients_path
     else

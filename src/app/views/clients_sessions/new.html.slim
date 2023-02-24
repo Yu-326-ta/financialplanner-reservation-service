@@ -1,0 +1,15 @@
+.row
+  h1 ログイン
+  .col
+    = form_with(url: clients_login_path, scope: :clients_session) do |f| 
+
+      = f.label :email 
+      = f.email_field :email, class: 'form-control'
+
+      = f.label :password 
+      = f.password_field :password, class: 'form-control'
+
+      = f.submit 'ログイン', class: 'btn btn-warning'
+
+      = link_to "アカウントの新規作成はこちら", clients_signup_path
+
