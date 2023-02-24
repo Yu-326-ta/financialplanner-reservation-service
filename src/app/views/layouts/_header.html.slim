@@ -10,6 +10,7 @@ header
           a href=clients_path class='nav-link active' aria-current='page' マイページ
           a href='#' class='nav-link active' プランナー一覧
           a href='#' class='nav-link active' 予約ページ
+          = link_to "ログアウト", clients_logout_path, class: 'nav-link active', data: { "turbo-method": :delete }
 
         - else 
           a href=root_path class='nav-link active' aria-current='page' ホーム

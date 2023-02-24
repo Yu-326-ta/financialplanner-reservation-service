@@ -16,4 +16,10 @@ module ClientsSessionsHelper
   def logged_in_client?
     !current_client.nil?
   end
+
+  # 現在のユーザーをログアウトする
+  def log_out_client
+    reset_session
+    @current_client = nil 
+  end
 end
