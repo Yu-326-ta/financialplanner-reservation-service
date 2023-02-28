@@ -32,3 +32,6 @@
 
 # Ignore  mysql_data
 /db/mysql_data
+
+# Ignore .DS_Store
+.DS_Store
