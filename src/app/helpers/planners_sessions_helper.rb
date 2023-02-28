@@ -1,4 +1,5 @@
 module PlannersSessionsHelper
+
   # 渡されたユーザーでログインする
   def log_in_planner(planner)
     session[:planner_id] = planner.id
@@ -14,5 +15,11 @@ module PlannersSessionsHelper
   # ユーザーがログインしていればtrue、その他ならfalseを返す
   def logged_in_planner?
     !current_planner.nil?
+  end
+
+  # 現在のユーザーをログアウトする
+  def log_out_planner
+    reset_session
+    @current_planner = nil
   end
 end
