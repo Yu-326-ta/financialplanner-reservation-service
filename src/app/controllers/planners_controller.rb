@@ -10,6 +10,8 @@ class PlannersController < ApplicationController
   def create
     @planner = Planner.new(planner_params)
     if @planner.save
+      reset_session
+      log_in_planner @planner
       flash[:info] = "マイページへようこそ"
       redirect_to planners_path
     else

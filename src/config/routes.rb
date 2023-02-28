@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get    'clients/login',   to: 'clients_sessions#new'
   post   'clients/login',   to: 'clients_sessions#create'
   delete 'clients/logout',  to: 'clients_sessions#destroy'
+  get    'planners/login',   to: 'planners_sessions#new'
+  post   'planners/login',   to: 'planners_sessions#create'
+  delete 'planners/logout',  to: 'planners_sessions#destroy'
   resources :clients
   resources :planners
 end
