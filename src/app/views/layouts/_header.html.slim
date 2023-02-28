@@ -6,26 +6,25 @@ header
       a href=root_path class="navbar-brand" FP Reservarion Service
       .collapse.navbar-collapse#navbarNavAltMarkup
       .navbar-nav
-        - if logged_in_client?
+        - if logged_in_client? 
           a href=clients_path class='nav-link active' aria-current='page' マイページ
           a href='#' class='nav-link active' プランナー一覧
           a href='#' class='nav-link active' 予約ページ
-          = link_to "ログアウト", clients_logout_path, class: 'nav-link active', data: { "turbo-method": :delete }
+          = button_to "ログアウト", clients_logout_path, method: :delete, class: 'nav-link active', data: { turbo: false }
 
-        / - else-if logged_in_planner?
-        /   a href='#' class='nav-link active' aria-current='page' 予約一覧
-        /   a href=planners_path class='nav-link active' マイページ]
-        / = link_to "ログアウト", planners_logout_path, class: 'nav-link active', data: { "turbo-method": :delete }
+        - elsif logged_in_planner? 
+          a href='#' class='nav-link active' aria-current='page' 予約一覧
+          a href=planners_path class='nav-link active' マイページ
+          = link_to "ログアウト", planners_logout_path, class: 'nav-link active', data: { "turbo-method": :delete }
 
         - else 
           a href=root_path class='nav-link active' aria-current='page' ホーム
           a href=help_path class='nav-link active' ヘルプ
-          a href='#' class='nav-link active' ログイン
           li class="nav-item dropdown"
-            a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" Dropdown link
+            a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" ログイン
             ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
               li 
-                a class="dropdown-item" href="#" Action
+                a class="dropdown-item" href=clients_login_path クライアント
               li 
-                a class="dropdown-item" href="#" Action
-            
+                a class="dropdown-item" href=planners_login_path プランナー
+          
