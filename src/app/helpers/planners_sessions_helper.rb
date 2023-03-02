@@ -6,7 +6,7 @@ module PlannersSessionsHelper
   end
 
   # 永続セッションのためにユーザーをデータベースに記憶する
-  def remember(planner)
+  def remember_planner(planner)
     planner.remember
     cookies.permanent.encrypted[:planner_id] = planner.id
     cookies.permanent[:remember_token] = planner.remember_token
@@ -31,7 +31,7 @@ module PlannersSessionsHelper
   end
 
   # 永続的セッションを破棄する
-  def forget(planner)
+  def forget_planner(planner)
     planner.forget
     cookies.delete(:planner_id)
     cookies.delete(:remember_token)
@@ -39,7 +39,7 @@ module PlannersSessionsHelper
 
   # 現在のユーザーをログアウトする
   def log_out_planner
-    forget(current_planner)
+    forget_planner(current_planner)
     reset_session
     @current_planner = nil
   end

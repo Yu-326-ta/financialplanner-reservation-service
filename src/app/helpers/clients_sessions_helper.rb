@@ -6,7 +6,7 @@ module ClientsSessionsHelper
   end
 
   # 永続セッションのためにユーザーをデータベースに記憶する
-  def remember(client)
+  def remember_client(client)
     client.remember
     cookies.permanent.encrypted[:client_id] = client.id
     cookies.permanent[:remember_token] = client.remember_token
@@ -31,7 +31,7 @@ module ClientsSessionsHelper
   end
 
   # 永続的セッションを破棄する
-  def forget(client)
+  def forget_client(client)
     client.forget
     cookies.delete(:client_id)
     cookies.delete(:remember_token)
@@ -39,7 +39,7 @@ module ClientsSessionsHelper
 
   # 現在のユーザーをログアウトする
   def log_out_client
-    forget(current_client)
+    forget_client(current_client)
     reset_session
     @current_client = nil 
   end

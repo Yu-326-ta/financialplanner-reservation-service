@@ -9,10 +9,11 @@
       = f.label :password, 'パスワード'
       = f.password_field :password, class: 'form-control'
 
-      = f.label :remember_me, class: "checkbox" do
-        = f.check_box :remember_me
-        span class='form-check-label' ログイン状態を記憶
-
+      = f.label :remember_me, class: 'checkbox inline'
+        .check
+          = f.check_box :remember_me, class: 'input_checkbox'
+          span class='span_checkbox' ログイン状態を記憶
+          
       = f.submit 'ログイン', class: 'btn btn-warning'
 
       = link_to "アカウントの新規作成はこちら", planners_signup_path

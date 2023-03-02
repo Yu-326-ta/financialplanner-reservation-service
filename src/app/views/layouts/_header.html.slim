@@ -10,12 +10,12 @@ header
           a href=clients_path class='nav-link active' aria-current='page' マイページ
           a href='#' class='nav-link active' プランナー一覧
           a href='#' class='nav-link active' 予約ページ
-          = button_to "ログアウト", clients_logout_path, method: :delete, class: 'nav-link active', data: { turbo: false }
+          = button_to "ログアウト", clients_logout_path, method: :delete, class: 'nav-link active'
 
         - elsif logged_in_planner? 
           a href='#' class='nav-link active' aria-current='page' 予約一覧
           a href=planners_path class='nav-link active' マイページ
-          = link_to "ログアウト", planners_logout_path, class: 'nav-link active', data: { "turbo-method": :delete }
+          = button_to "ログアウト", planners_logout_path, method: :delete, class: 'nav-link active'
 
         - else 
           a href=root_path class='nav-link active' aria-current='page' ホーム

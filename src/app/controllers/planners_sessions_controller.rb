@@ -6,7 +6,7 @@ class PlannersSessionsController < ApplicationController
     planner = Planner.find_by(email: params[:planners_session][:email].downcase)
     if planner && planner.authenticate(params[:planners_session][:password])
       reset_session
-      params[:planners_session][:remember_me] == '1' ? remember(planner) : forget(planner)
+      params[:planners_session][:remember_me] == '1' ? remember_planner(planner) : forget_planner(planner)
       log_in_planner planner
       redirect_to planners_path
     else

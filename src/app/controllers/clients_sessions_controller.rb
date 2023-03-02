@@ -6,7 +6,7 @@ class ClientsSessionsController < ApplicationController
     client = Client.find_by(email: params[:clients_session][:email].downcase)
     if client && client.authenticate(params[:clients_session][:password])
       reset_session
-      params[:clients_session][:remember_me] == '1' ? remember(client) : forget(client)
+      params[:clients_session][:remember_me] == '1' ? remember_client(client) : forget_client(client)
       log_in_client client
       redirect_to clients_path
     else
