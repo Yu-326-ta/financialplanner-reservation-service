@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get    'planners/login',   to: 'planners_sessions#new'
   post   'planners/login',   to: 'planners_sessions#create'
   delete 'planners/logout',  to: 'planners_sessions#destroy'
+  get    'clients/reservation',   to: 'reservations#index'
   resources :clients
   resources :planners
 end
