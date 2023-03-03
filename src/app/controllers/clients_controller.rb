@@ -1,5 +1,4 @@
 class ClientsController < ApplicationController
-  
   def index
   end
   
@@ -21,8 +20,6 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                   :password_confirmation)
   end
-
-
 end
