@@ -23,8 +23,8 @@ body {
     padding: 0px;
   }
 
-  .row {
-    padding: 150px 500px;
+  .form_style {
+    padding: 150px 600px;
   }
 
   section {
@@ -48,7 +48,7 @@ body {
   }
 
   .register {
-    padding-top: 200px;
+    padding-top: 300px;
     display: flex;
     justify-content: space-around; 
   }
@@ -118,4 +118,8 @@ input {
   width: 20px;
   height: 30px;
   margin-top: 5px;
+}
+
+.form_h1 {
+  padding-bottom: 30px;
 }
