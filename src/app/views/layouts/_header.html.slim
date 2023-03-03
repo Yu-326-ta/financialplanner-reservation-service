@@ -9,7 +9,7 @@ header
         - if logged_in_client? 
           a href=clients_path class='nav-link active' aria-current='page' マイページ
           a href='#' class='nav-link active' プランナー一覧
-          a href='#' class='nav-link active' 予約ページ
+          a href=clients_reservation_path class='nav-link active' 予約ページ
           = button_to "ログアウト", clients_logout_path, method: :delete, class: 'nav-link active'
 
         - elsif logged_in_planner? 
