@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   
   def index
+    @planners = Planner.all
   end
   
   def new
@@ -13,10 +14,13 @@ class ClientsController < ApplicationController
       reset_session
       log_in_client @client
       flash[:info] = "マイページへようこそ"
-      redirect_to clients_path
+      redirect_to @client
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def show
   end
   
   private

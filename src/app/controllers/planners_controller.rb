@@ -13,10 +13,14 @@ class PlannersController < ApplicationController
       reset_session
       log_in_planner @planner
       flash[:info] = "マイページへようこそ"
-      redirect_to planners_path
+      redirect_to @planner
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def show
+    @planner = Planner.find(params[:id])
   end
 
   private
