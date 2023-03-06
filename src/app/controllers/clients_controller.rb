@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   include ClientsSessionsHelper
   def index
-    @planners = Planner.all
+    @planners = Planner.all.page(params[:page]).per(10)
   end
   
   def new
