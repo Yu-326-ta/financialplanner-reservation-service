@@ -1,1 +1,32 @@
-h1 マイページ
+.container
+  .row
+    .col-12.text-center
+      h1.reservation_h1
+        | プランナー一覧
+    .col-12.mt-3
+      table.table.table-striped
+        thead
+          tr
+            th[scope="col"]
+              | 
+            th[scope="col"]
+              | 名前
+            th[scope="col"]
+              | メールアドレス
+            th[scope="col"]
+              | プランナー紹介
+            th[scope="col"]
+              | 予約画面
+        tbody
+          - @planners.each do |planner| 
+            tr
+              th[scope="row"]
+                = planner.id
+              td
+                = planner.name
+              td
+                = planner.email 
+              td
+                button type="button" class="btn btn-outline-primary" onclick="location.href='planners/#{planner.id}'" 詳細ページ 
+              td
+                button type="button" class="btn btn-outline-primary" onclick="location.href='#'" 予約ページ

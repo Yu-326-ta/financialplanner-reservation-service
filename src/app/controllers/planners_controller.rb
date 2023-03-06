@@ -19,6 +19,10 @@ class PlannersController < ApplicationController
     end
   end
 
+  def show
+    @planner = Planner.find(params[:id])
+  end
+
   private
 
   def planner_params

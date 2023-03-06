@@ -8,7 +8,7 @@ class ClientsSessionsController < ApplicationController
       reset_session
       params[:clients_session][:remember_me] == '1' ? remember_client(client) : forget_client(client)
       log_in_client client
-      redirect_to clients_path
+      redirect_to client
     else
       flash.now[:danger] = 'メールアドレスまたはパスワードが有効ではありません'
       render 'new', status: :unprocessable_entity

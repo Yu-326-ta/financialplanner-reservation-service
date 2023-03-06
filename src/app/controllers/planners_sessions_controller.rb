@@ -8,7 +8,7 @@ class PlannersSessionsController < ApplicationController
       reset_session
       params[:planners_session][:remember_me] == '1' ? remember_planner(planner) : forget_planner(planner)
       log_in_planner planner
-      redirect_to planners_path
+      redirect_to planner
     else
       flash.now[:danger] = 'メールアドレスまたはパスワードが有効ではありません'
       render 'new', status: :unprocessable_entity

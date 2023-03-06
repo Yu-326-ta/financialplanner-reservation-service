@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   include ClientsSessionsHelper
   def index
+    @planners = Planner.all
   end
   
   def new
@@ -17,6 +18,9 @@ class ClientsController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def show
   end
   
   private
