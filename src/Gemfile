@@ -22,6 +22,9 @@ gem 'rails-i18n'
 # Install Simple Calendar
 gem 'simple_calendar'
 
+# Install pegination gem kaminari
+gem 'kaminari'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
