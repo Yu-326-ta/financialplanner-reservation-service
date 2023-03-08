@@ -1,14 +1,14 @@
 .simple-calendar
   .calendar-heading
-    = link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view
-    - if calendar.number_of_weeks == 1
-      span.calendar-title style="margin: 0px 15px;"
-        = t('simple_calendar.week', default: '1週間')
-    - else
-      span.calendar-title
-        = t('simple_calendar.week', default: '1週間')
-    = link_to t('simple_calendar.next', default: '翌週'), calendar.url_for_next_view
-    - reservations = Reservation.reservations_after_three_month
+    nav aria-label="Page navigation example"
+      ul class="pagination"
+        li class="page-item"
+          a class="page-link" href="#{calendar.url_for_previous_view}" < 前週
+        li class="page-item active" aria-current="page"
+          a class="page-link" href="#" 1週間
+        li class="page-item"
+          a class="page-link" href="#{calendar.url_for_next_view}" 翌週 >
+      - reservations = Reservation.reservations_after_three_month
   table.table-striped.table
     thead
       tr
@@ -39,3 +39,5 @@
                 = '×'
               - else
                 = '○'
+    
+        
