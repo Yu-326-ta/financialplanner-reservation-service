@@ -1,2 +1,22 @@
-h1 Planners#new
-p Find me in app/views/planners/new.html.slim
+.row
+  h1 新規登録
+  .col
+    = form_with(model: @planner) do |f| 
+      = render 'shared/planners_error_messages' 
+
+      = f.label :name 
+      = f.text_field :name, class: 'form-control' 
+
+      = f.label :email 
+      = f.email_field :email, class: 'form-control'
+
+      = f.label :discription, '自己紹介'
+      = f.text_area :discription, class: 'form-control', size: '40x15'
+
+      = f.label :password 
+      = f.password_field :password, class: 'form-control'
+
+      = f.label :password_confirmation, 'パスワード確認'
+      = f.password_field :password_confirmation, class: 'form-control'
+
+      = f.submit '新規登録', class: 'btn btn-warning'
