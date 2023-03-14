@@ -2,6 +2,7 @@ create_table :clients do |t|
   t.string :name, null: false, limit: 50
   t.string :email, null: false, limit: 255, unique: true
   t.string :password_digest, null: false
+  t.string :remember_digest  
   t.datetime :created_at, null: false
   t.datetime :updated_at, null: false
 end
@@ -11,6 +12,7 @@ create_table :planners do |t|
   t.string :email, null: false, limit: 255, unique: true
   t.text :discription, limit: 1000
   t.string :password_digest, null: false
+  t.string :remember_digest
   t.datetime :created_at, null: false
   t.datetime :updated_at, null: false
 end
