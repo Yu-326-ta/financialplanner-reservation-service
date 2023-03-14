@@ -40,4 +40,3 @@ class Planner < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 end
-  
