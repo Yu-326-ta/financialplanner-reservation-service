@@ -20,7 +20,11 @@ body {
   }
 
   .container-fluid {
-    padding: 0px;
+    padding: 0px !important;
+  }
+
+  .nav-item {
+    padding: 0px 30px !important;
   }
 
   .form_style {
@@ -126,8 +130,16 @@ input {
 
 /* reservations */
 .reservation_h1 {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+td a {
+  text-decoration: none !important;
+}
+
+#reservation-form {
+  padding: 150px 150px;
 }
 
 /* planner_index */
