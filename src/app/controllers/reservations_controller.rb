@@ -6,6 +6,11 @@ class ReservationsController < ApplicationController
     @time = params[:time]
     @planner_id = params[:planner_id]
     @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
+
+    message = Reservation.check_reservation_day(@day.to_date)
+    if !!message
+      redirect_to reservation_path(@planner.id), flash: { danger: message }
+    end
   end
 
   def show
