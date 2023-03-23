@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+  has_many :reservations
   attr_accessor :remember_token
 
   before_save { email.downcase! }

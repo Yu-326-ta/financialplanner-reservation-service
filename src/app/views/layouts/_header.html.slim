@@ -1,7 +1,7 @@
 header
   nav.navbar.navbar-expand-lg.navbar-light.bg-warning
-    .container-fluid
-      a class='navbar-brand' href='#'
+    .container-fluid.nav-item
+      a class='navbar-brand'
         img src='/assets/icon.png' alt='' width='30' height='35' class='icon'
       a href=root_path class="navbar-brand" FP Reservarion Service
       .collapse.navbar-collapse#navbarNavAltMarkup
@@ -9,7 +9,6 @@ header
         - if logged_in_client? 
           a href=client_path(current_client) class='nav-link active' aria-current='page' マイページ
           a href=clients_path class='nav-link active' プランナー一覧
-          a href=clients_reservation_path class='nav-link active' 予約ページ
           = button_to "ログアウト", clients_logout_path, method: :delete, class: 'nav-link active'
 
         - elsif logged_in_planner? 
