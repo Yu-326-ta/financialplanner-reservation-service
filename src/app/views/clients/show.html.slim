@@ -1,1 +1,68 @@
-h1 マイページ
+.container
+  .row
+    .col-12.text-center.title
+      h1#mypage-title
+        | マイページ
+    .col-12.mt-3.text-center.content
+      div
+        label
+          strong
+            | 名前：
+        p[style="display:inline;"]
+          = @client.name
+      div
+        label
+          strong
+            | メールアドレス：
+        p[style="display:inline;"]
+          = @client.email
+      .col-12.mt-3.text-center.mx-auto
+        h3
+          | 予約一覧
+        table.table
+          thead
+            tr
+              th[scope="col"]
+                | 予約日
+              th[scope="col"]
+                | 予約プランナー
+              th
+          tbody
+            - @client_reservations.each do |client_reservation|
+              tr
+              
+              td
+                = client_reservation.day
+                = client_reservation.time
+              td
+                - planner = Planner.find(client_reservation.planner_id)
+                = planner.name
+              td
+                = button_to '削除', reservation_path, method: :delete, params: {client_id: client_reservation.id},
+                                                     form: { data: { turbo_confirm: '本当に削除しますか？', } },
+                                                     class: 'btn btn-outline-primary'
+            - if @client_reservations.blank?
+              tr
+
+              td
+                | 予約はありません。
+      .col-12.mt-3.text-center.mx-auto
+        h3
+          | 来院履歴
+        table.table
+          thead
+            tr
+              th[scope="col"]
+                | 予約日
+          tbody
+            - @visit_historys.each do |visit_history|
+              tr
+
+              td
+                = visit_history.day  
+                = visit_history.time
+            - if @visit_historys.blank?
+              tr
+
+              td
+                | 来院履歴はありません。

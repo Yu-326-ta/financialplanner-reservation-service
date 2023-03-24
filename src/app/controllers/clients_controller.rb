@@ -21,6 +21,9 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @client = Client.find(params[:id])
+    @client_reservations = @client.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
+    @visit_historys = @client.reservations.where("start_time < ?", DateTime.current).where("start_time > ?", DateTime.current << 12).order(day: :desc).limit(5)
   end
   
   private
