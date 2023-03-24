@@ -21,9 +21,19 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to client_path @reservation.id
+      redirect_to client_path(@reservation.client_id)
     else
       render :new
+    end
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:client_id])
+    if @reservation.destroy
+      flash[:success] = "予約を削除しました。"
+      redirect_to client_path(@reservation.client_id)
+    else
+      render :show, flash: { error: "予約の削除に失敗しました" }
     end
   end
 

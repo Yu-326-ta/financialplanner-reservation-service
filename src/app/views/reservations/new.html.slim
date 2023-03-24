@@ -1,11 +1,23 @@
 .container
   .row#reservation-form
     .col-12.text-center.title
-      h1
+      h1#reservation-newform
         | 新規予約画面
+    / .col-12.mt-3.text-center.content.new-form
+    /   div
+    /     label
+    /       strong
+    /         | プランナー名：
+    /     p[style="display:inline;"]
+    /       = @planner.name
+    /   div
+    /     label
+    /       strong
+    /         | メールアドレス：
+    /     p[style="display:inline;"]
+    /       = @planner.email
     .col-12.mt-3.content
       = form_with model: @reservation, local: true, class: 'form' do |form|
-        = render 'shared/reservation_error_messages', model: form.object
         .day.form-group
           = form.label :day, '日付'
           = form.text_field :day, class: 'form-control', value: @day, readonly: true
