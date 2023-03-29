@@ -32,14 +32,14 @@
               tr
               
               td
-                = client_reservation.day
+                = "#{client_reservation.day} "
                 = client_reservation.time
               td
                 - planner = Planner.find(client_reservation.planner_id)
                 = planner.name
               td
-                = button_to '削除', reservation_path, method: :delete, params: {client_id: client_reservation.id},
-                                                     form: { data: { turbo_confirm: '本当に削除しますか？', } },
+                = button_to '削除', reservation_path, method: :delete, form: { data: { turbo_confirm: '本当に削除しますか？' }},
+                                                     params: {client_id: client_reservation.id},
                                                      class: 'btn btn-outline-primary'
             - if @client_reservations.blank?
               tr
@@ -59,7 +59,7 @@
               tr
 
               td
-                = visit_history.day  
+                = "#{visit_history.day} "
                 = visit_history.time
             - if @visit_historys.blank?
               tr
