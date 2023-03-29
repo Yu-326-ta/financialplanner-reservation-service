@@ -10,12 +10,17 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
+    # 画像登録処理
+    image = params[:client][:client_image]
+    hash = SecureRandom.hex(10)
+    @client.client_image = "#{@client.name}_#{hash}.jpg" if image
     if @client.save
       reset_session
       log_in_client @client
       flash[:info] = "マイページへようこそ"
       redirect_to @client
     else
+      @client.client_image = image if image
       render 'new', status: :unprocessable_entity
     end
   end
@@ -29,7 +34,6 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:name, :email, :password,
-                                 :password_confirmation)
+    params.require(:client).permit(:name, :email, :client_image, :password, :password_confirmation)
   end
 end
