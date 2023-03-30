@@ -21,9 +21,10 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
+      flash[:info] = "予約が完了しました"
       redirect_to client_path(@reservation.client_id)
     else
-      render :new
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -33,7 +34,7 @@ class ReservationsController < ApplicationController
       flash[:success] = "予約を削除しました。"
       redirect_to client_path(@reservation.client_id)
     else
-      render :show, flash: { error: "予約の削除に失敗しました" }
+      render 'show', flash: { error: "予約の削除に失敗しました" }
     end
   end
 
