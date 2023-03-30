@@ -27,5 +27,9 @@ module ReservationsHelper
 
     return result
   end
+
+  def check_saturday_reservation(day, time)
+    day.strftime("%a") == "Sat" && ["10:00", "10:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"].include?(time)
+  end
 end
  

@@ -26,7 +26,7 @@
             = time
           - week.each do |day|
             td
-              - if check_reservation(@reservations, day, time)
+              - if check_reservation(@reservations, day, time) || day.strftime("%a") == "Sun" || check_saturday_reservation(day, time)
                 = '×'
               - else
                 = link_to new_reservation_path(day: day, time: time, planner_id: @planner.id) do
