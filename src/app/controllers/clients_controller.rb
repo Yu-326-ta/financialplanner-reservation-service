@@ -17,7 +17,7 @@ class ClientsController < ApplicationController
     if @client.save
       reset_session
       log_in_client @client
-      File.binwrite("app/assets/images/#{@client.client_image}", image.read)
+      File.binwrite("app/assets/images/#{@client.client_image}", image.read) if image
       flash[:info] = "マイページへようこそ"
       redirect_to @client
     else
