@@ -158,3 +158,19 @@ h3 {
 td, th {
   vertical-align: middle;
 }
+
+/* client_profile */
+.profile-image {
+  margin-bottom: 7px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+}
+
+.profile-index-image {
+  // margin-bottom: 7px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-right: 20px;
+}

@@ -16,6 +16,7 @@ class PlannersController < ApplicationController
     if @planner.save
       reset_session
       log_in_planner @planner
+      File.binwrite("app/assets/images/#{@planner.planner_image}", image.read)
       flash[:info] = "マイページへようこそ"
       redirect_to @planner
     else

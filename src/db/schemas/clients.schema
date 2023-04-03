@@ -5,7 +5,7 @@ create_table "clients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", for
   t.string "email"
   t.string "password_digest"  
   t.string "remember_digest"  
-  t.blob "client_image"
+  t.string "client_image"
   t.index "email", unique: true
   t.datetime "created_at", null: false
   t.datetime "updated_at", null: false
