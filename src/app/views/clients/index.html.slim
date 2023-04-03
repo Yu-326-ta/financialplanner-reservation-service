@@ -21,7 +21,7 @@
           - @planners.each do |planner| 
             tr
               th[scope="row"]
-                = planner.id
+                = image_tag "#{planner.planner_image}", class: 'profile-index-image'
               td
                 = planner.name
               td
