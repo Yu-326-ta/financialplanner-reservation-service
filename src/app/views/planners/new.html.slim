@@ -4,22 +4,28 @@
     = form_with(model: @planner) do |f| 
       = render 'shared/planners_error_messages' 
 
-      = f.label :name 
+      = f.label :name
+      span class="badge bg-danger form-badge" 必須
       = f.text_field :name, class: 'form-control' 
 
       = f.label :email 
+      span class="badge bg-danger form-badge" 必須
       = f.email_field :email, class: 'form-control'
 
       = f.label :planner_image, "プロフィール画像"
+      span class="badge bg-danger form-badge" 必須
       = f.file_field :planner_image, class: 'form-control'
 
       = f.label :discription, '自己紹介'
+      span class="badge bg-secondary form-badge" 任意
       = f.text_area :discription, class: 'form-control', size: '40x15'
 
       = f.label :password 
+      span class="badge bg-danger form-badge" 必須
       = f.password_field :password, class: 'form-control'
 
       = f.label :password_confirmation, 'パスワード確認'
+      span class="badge bg-danger form-badge" 必須
       = f.password_field :password_confirmation, class: 'form-control'
 
       = f.submit '新規登録', class: 'btn btn-warning'

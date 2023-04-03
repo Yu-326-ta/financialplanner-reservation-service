@@ -34,4 +34,4 @@
 /db/mysql_data
 
 # Ignore profile image
-/app/images
+/app/assets/images
