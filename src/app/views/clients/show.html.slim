@@ -5,6 +5,14 @@
         | マイページ
     .col-12.mt-3.text-center.content
       div
+        p.image_circle
+      div
+      div
+        - if @client.client_image.nil?
+          = image_tag "22f1fc28980b598b3c74962091c245ac.png", size: '100x200', class: 'profile-image'
+        - else
+          = image_tag "#{@client.client_image}", size: '100x200', class: 'profile-image'
+      div
         label
           strong
             | 名前：
@@ -36,6 +44,10 @@
                 = client_reservation.time
               td
                 - planner = Planner.find(client_reservation.planner_id)
+                - if planner.planner_image.nil?
+                  = image_tag "22f1fc28980b598b3c74962091c245ac.png", class: 'profile-index-image'
+                - else
+                  = image_tag "#{planner.planner_image}", class: 'profile-index-image'
                 = planner.name
               td
                 = button_to '削除', reservation_path, method: :delete, form: { data: { turbo_confirm: '本当に削除しますか？' }},
