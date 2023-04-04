@@ -19,6 +19,10 @@ body {
     color: var(--body);
   }
 
+  .container-fluid {
+    padding: 0px !important;
+  }
+
   .form_style {
     padding: 150px 600px;
   }
