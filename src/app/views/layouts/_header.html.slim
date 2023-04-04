@@ -1,29 +1,41 @@
-header
-  nav.navbar.navbar-expand-lg.navbar-light.bg-warning
-    .container-fluid.nav-item
-      a class='navbar-brand'
-        img src='/assets/icon.png' alt='' width='30' height='35' class='icon'
-      a href=root_path class="navbar-brand" FP Reservarion Service
-      .collapse.navbar-collapse#navbarNavAltMarkup
-      .navbar-nav
-        - if logged_in_client? 
-          a href=client_path(current_client) class='nav-link active' aria-current='page' マイページ
-          a href=clients_path class='nav-link active' プランナー一覧
-          = button_to "ログアウト", clients_logout_path, method: :delete, class: 'nav-link active'
-
-        - elsif logged_in_planner? 
-          a href='#' class='nav-link active' aria-current='page' 予約一覧
-          a href=planner_path(current_planner) class='nav-link active' マイページ
-          = button_to "ログアウト", planners_logout_path, method: :delete, class: 'nav-link active'
-
-        - else 
-          a href=root_path class='nav-link active' aria-current='page' ホーム
-          a href=help_path class='nav-link active' ヘルプ
-          li class="nav-item dropdown"
-            a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" ログイン
-            ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
-              li 
-                a class="dropdown-item" href=clients_login_path クライアント
-              li 
-                a class="dropdown-item" href=planners_login_path プランナー
-          
+nav class="navbar navbar-expand-lg navbar-light bg-dark py-1 fixed-top"
+  .container
+    img src='/assets/icon.png' alt='' width='30' height='35' class='icon me-3'
+    a class="navbar-brand" href=root_path
+      h2 class='text-white pt-1' FP Reservation Service 
+    button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+      span class="navbar-toggler-icon"
+    .collapse.navbar-collapse#navbarNav
+    -if logged_in_client? 
+      ul class="navbar-nav ms-auto"
+        img src='/assets/usericon.png' alt='' width='22' height='27' class='mypage-icon'
+        li class="nav-item"
+          a class="nav-link" aria-current="page" href=client_path(current_client) MyPage
+        img src='/assets/reserve.png' alt='' width='22' height='27' class='mypage-icon'
+        li class="nav-item"
+          a class="nav-link" href=clients_path Reserve
+        = button_to "Logout", clients_logout_path, method: :delete, class: 'btn btn-primary nav-link active ms-5'
+    - elsif logged_in_planner? 
+      ul class="navbar-nav ms-auto"
+        img src='/assets/usericon.png' alt='' width='22' height='27' class='mypage-icon'
+        li class="nav-item"
+          a class="nav-link" href=planner_path(current_planner) MyPage
+        img src='/assets/reserved.png' alt='' width='25' height='30' class='reserved-icon'
+        li class="nav-item"
+          a class="nav-link" aria-current="page" href='#' Reservations
+        = button_to "Logout", planners_logout_path, method: :delete, class: 'btn btn-primary nav-link active ms-5'
+    -else
+      ul class="navbar-nav ms-auto"
+        img src='/assets/home.png' alt='' width='25' height='30' class='mt-1'
+        li class="nav-item"
+          a class="nav-link" aria-current="page" href=root_path Home
+        img src='/assets/help.png' alt='' width='22' height='27' class='about-icon'
+        li class="nav-item"
+          a class="nav-link" href=help_path About
+        .dropdown
+          button class="btn btn-primary dropdown-toggle ms-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" Login
+          ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"
+            li
+              a class="dropdown-item" href=clients_login_path Client 
+            li
+              a class="dropdown-item" href=planners_login_path Planner
