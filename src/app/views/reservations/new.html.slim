@@ -3,19 +3,6 @@
     .col-12.text-center.title
       h1#reservation-newform
         | 新規予約画面
-    / .col-12.mt-3.text-center.content.new-form
-    /   div
-    /     label
-    /       strong
-    /         | プランナー名：
-    /     p[style="display:inline;"]
-    /       = @planner.name
-    /   div
-    /     label
-    /       strong
-    /         | メールアドレス：
-    /     p[style="display:inline;"]
-    /       = @planner.email
     .col-12.mt-3.content
       = form_with model: @reservation, local: true, class: 'form' do |form|
         .day.form-group
@@ -31,6 +18,6 @@
         = form.hidden_field :client_id, value: current_client.id
         = form.hidden_field :start_time, value: @start_time
         .submit
-          = form.submit value: '予約する', class: 'btn btn-warning mx-auto d-block'
+          = form.submit value: '予約する', class: 'btn btn-primary mx-auto d-block'
       .col-12.text-right
         = link_to '日付選択へ戻る', reservation_path(@planner.id)
