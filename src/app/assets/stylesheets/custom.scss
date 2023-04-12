@@ -27,39 +27,14 @@ body {
     padding: 150px 600px;
   }
 
-  section {
-    overflow: auto;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  .center h1 {
-    margin: 30px 0px;
-  }
-
-  .center h2 {
-    margin-bottom: 50px;
-  }
-
-  .register {
-    padding-top: 300px;
+  .home-info {
+    padding-top: 150px;
     display: flex;
     justify-content: space-around; 
   }
 
-  .planner {
-    margin-left: 70px;
-  }
-
   .button {
     text-align:center;
-    padding: 10px;
     display: flex;
   }
 
@@ -70,6 +45,46 @@ body {
   .btn-login {
     padding-left: 10px;
   }
+
+.home {
+  background-image: url("assets/cover.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(37, 39, 71, 0.7);
+  z-index: -1;
+}
+
+.home-subtitle {
+  padding-top: 10px;
+}
+
+.info {
+  padding-bottom: 150px;
+}
+
+.btn-login {
+  margin-left: 5px !important;
+}
+
+.client {
+  margin-left: 400px !important;
+}
+
+.planner {
+  margin-left: 100px;
+}
 
 /* navbar */
 .navbar .nav-link {
@@ -146,6 +161,10 @@ input {
 
 .form-badge {
   margin: 0px 0px 7px 5px !important;
+}
+
+.register {
+  margin-bottom: 150px;
 }
 
 /* reservations */
