@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  include ClientsSessionsHelper
   def index
   end
   

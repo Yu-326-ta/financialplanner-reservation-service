@@ -1,4 +1,5 @@
 class PlannersController < ApplicationController
+  include PlannersSessionsHelper
   def index
   end
 
