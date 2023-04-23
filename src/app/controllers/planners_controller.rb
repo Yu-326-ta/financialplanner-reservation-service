@@ -12,7 +12,7 @@ class PlannersController < ApplicationController
     if @planner.save
       reset_session
       log_in_planner @planner
-      flash[:info] = "マイページへようこそ"
+      flash[:info] = 'マイページへようこそ'
       redirect_to planners_path
     else
       render 'new', status: :unprocessable_entity

@@ -12,7 +12,7 @@ class ClientsController < ApplicationController
     if @client.save
       reset_session
       log_in_client @client
-      flash[:info] = "マイページへようこそ"
+      flash[:info] = 'マイページへようこそ'
       redirect_to clients_path
     else
       render 'new', status: :unprocessable_entity
