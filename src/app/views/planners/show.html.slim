@@ -1,4 +1,19 @@
-h1 プランナー詳細ページ
+container
+  .row
+    .col-12.text-center.title
+      h1.page-title#mypage-title
+        | Planner Profile
 
-span 
-  = @planner.id
+div class="card mb-3 planner-card"
+  div class="row g-0 rounded"
+    div class="col-md-4"
+      = image_tag "#{@planner.planner_image}", class: 'card-img-top'
+    div class="col-md-8"
+      div class="card-body text-center"
+        h4.card-title.card-profile プロフィール
+        h5.card-name 名前: #{@planner.name}
+        h5 メールアドレス: #{@planner.email}
+        h5 登録日: #{@planner.created_at.strftime("%Y/ %m/ %d[%a]")}
+        h5.card-discription 自己紹介
+        p class="card-text" 
+          = @planner.discription
