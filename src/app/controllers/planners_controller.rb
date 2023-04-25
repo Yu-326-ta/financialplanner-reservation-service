@@ -1,4 +1,5 @@
 class PlannersController < ApplicationController
+  include PlannersSessionsHelper
   def index
   end
 
@@ -9,7 +10,9 @@ class PlannersController < ApplicationController
   def create
     @planner = Planner.new(planner_params)
     if @planner.save
-      flash[:info] = "マイページへようこそ"
+      reset_session
+      log_in_planner @planner
+      flash[:info] = 'マイページへようこそ'
       redirect_to planners_path
     else
       render 'new', status: :unprocessable_entity

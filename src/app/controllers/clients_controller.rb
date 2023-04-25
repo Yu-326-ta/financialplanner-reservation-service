@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  include ClientsSessionsHelper
   def index
   end
   
@@ -9,7 +10,9 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      flash[:info] = "マイページへようこそ"
+      reset_session
+      log_in_client @client
+      flash[:info] = 'マイページへようこそ'
       redirect_to clients_path
     else
       render 'new', status: :unprocessable_entity
