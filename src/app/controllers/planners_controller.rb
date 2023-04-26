@@ -1,6 +1,9 @@
 class PlannersController < ApplicationController
   
   def index
+    current_planner
+    @planners = Planner.all.page(params[:page])
+    @planner_reservations = @current_planner.reservations.where("start_time >= ?", DateTime.current).order(day: :asc).page(params[:page]).per(10)
   end
 
   def new
