@@ -171,6 +171,7 @@ input {
 .reservation_h1 {
   padding-top: 80px;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 3px #666;
 }
 
 td a {
@@ -183,6 +184,7 @@ td a {
 
 #mypage-title {
   padding-top: 80px;
+  text-shadow: 2px 2px 3px #666;
 }
 
 h3 {
@@ -211,6 +213,14 @@ td, th {
   height:50px;
   border-radius:50%;
   margin-right: 20px;
+}
+
+.profile-body {
+  background-color: #00000008;
+}
+
+.planner-profile {
+  box-shadow: 4px 4px 8px gray;
 }
 
 /* planner_profile */
@@ -248,4 +258,17 @@ td, th {
 
 .card-profile:after {
   right: 0;
+}
+
+/* list or table of charges */
+.pricing-header {
+  max-width: 700px;
+}
+
+.charge-list {
+  box-shadow: 2px 2px 4px gray;
+}
+
+.charge-button {
+  box-shadow: 4px 4px 8px gray !important;
 }
