@@ -72,6 +72,7 @@ body {
 
 .info {
   padding-bottom: 150px;
+  text-shadow: 2px 2px 3px gray;
 }
 
 .btn-login {
@@ -84,6 +85,14 @@ body {
 
 .planner {
   margin-left: 100px;
+}
+
+.home-card {
+  box-shadow: 2px 2px 4px gray;
+}
+
+.home-card-button {
+  box-shadow: 2px 2px 4px gray;
 }
 
 /* navbar */
