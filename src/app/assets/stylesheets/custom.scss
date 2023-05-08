@@ -281,3 +281,51 @@ td, th {
 .charge-button {
   box-shadow: 4px 4px 8px gray !important;
 }
+
+/* help page */
+.qa-004 dt,
+.qa-004 dd {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 1em 2em 1em 14em;
+    color: #333333;
+}
+
+.qa-004 dt {
+    font-weight: 600;
+}
+
+.qa-004 dd + dt {
+    margin-top: 1em;
+}
+
+.qa-004 dt::before,
+.qa-004 dd::before {
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 13%;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 40px;
+    text-align: center;
+}
+
+.qa-004 dt::before {
+    background-color: #75bbff;
+    content: 'Q';
+}
+
+.qa-004 dd::before {
+    background-color: #ff8d8d;
+    content: 'A';
+}
+
+.qa-first {
+  margin-top: 50px !important;
+}
