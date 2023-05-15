@@ -1,5 +1,5 @@
-.row
-  h1 新規登録
+.form_style
+  h1 class='form_h1' 新規登録
   .col
     = form_with(model: @planner) do |f| 
       = render 'shared/planners_error_messages' 
@@ -9,6 +9,9 @@
 
       = f.label :email 
       = f.email_field :email, class: 'form-control'
+
+      = f.label :planner_image, "プロフィール画像"
+      = f.file_field :planner_image, class: 'form-control'
 
       = f.label :discription, '自己紹介'
       = f.text_area :discription, class: 'form-control', size: '40x15'
