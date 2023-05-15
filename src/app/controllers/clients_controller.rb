@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   def index
     @planners = Planner.all.page(params[:page]).per(10)
   end
-  
+
   def new
     @client = Client.new
   end
@@ -27,10 +27,11 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @client_reservations = @client.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
-    @visit_historys = @client.reservations.where("start_time < ?", DateTime.current).where("start_time > ?", DateTime.current << 12).order(day: :desc).limit(5)
+    @client_reservations = @client.reservations.where('start_time >= ?', DateTime.current).order(day: :desc)
+    @visit_historys = @client.reservations.where('start_time < ?', DateTime.current).where('start_time > ?',
+                                                                                           DateTime.current << 12).order(day: :desc).limit(5)
   end
-  
+
   private
 
   def client_params

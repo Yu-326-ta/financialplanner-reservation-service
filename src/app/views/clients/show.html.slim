@@ -8,13 +8,13 @@
         label
           strong
             | 名前：
-        p[style="display:inline;"]
+        p[style='display:inline;']
           = @client.name
       div
         label
           strong
             | メールアドレス：
-        p[style="display:inline;"]
+        p[style='display:inline;']
           = @client.email
       .col-12.mt-3.text-center.mx-auto
         h3
@@ -22,9 +22,9 @@
         table.table
           thead
             tr
-              th[scope="col"]
+              th[scope='col']
                 | 予約日
-              th[scope="col"]
+              th[scope='col']
                 | 予約プランナー
               th
           tbody
@@ -52,7 +52,7 @@
         table.table
           thead
             tr
-              th[scope="col"]
+              th[scope='col']
                 | 予約日
           tbody
             - @visit_historys.each do |visit_history|
