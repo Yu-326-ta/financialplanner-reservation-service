@@ -19,7 +19,7 @@
               - capture_haml(day, sorted_events.fetch(day, []), &passed_block)
             - else
               - passed_block.call day, sorted_events.fetch(day, [])
-        - times.each do |time|
+        - times_array.each do |time|
           tr
 
           td
