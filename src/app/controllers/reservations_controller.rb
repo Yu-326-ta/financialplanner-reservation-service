@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
     @day = params[:day]
     @time = params[:time]
     @planner_id = params[:planner_id]
-    @start_time = DateTime.parse(@day + ' '  + @time + ' ' + 'JST')
+    @start_time = Time.zone.parse("#{@day} #{@time}")
 
     message = Reservation.check_reservation_day(@day.to_date)
     if !!message
@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
 
   def show
     @planner = Planner.find(params[:id])
-    @reservations = @planner.reservations.where('day >= ?', Date.current).where('day < ?', Date.current >> 3).order(day: :desc)
+    @reservations = @planner.reservations.where(day: Date.current..).where(day: ...(Date.current >> 3)).order(day: :desc)
   end
 
   def create
