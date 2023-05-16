@@ -3,19 +3,6 @@
     .col-12.text-center.title
       h1#reservation-newform
         | 新規予約画面
-    / .col-12.mt-3.text-center.content.new-form
-    /   div
-    /     label
-    /       strong
-    /         | プランナー名：
-    /     p[style="display:inline;"]
-    /       = @planner.name
-    /   div
-    /     label
-    /       strong
-    /         | メールアドレス：
-    /     p[style="display:inline;"]
-    /       = @planner.email
     .col-12.mt-3.content
       = form_with model: @reservation, local: true, class: 'form' do |form|
         .day.form-group
