@@ -10,6 +10,8 @@ class Reservation < ApplicationRecord
   validate :date_current_today
   validate :date_three_month_end
 
+  scope :post_reservations, -> { where(day: Date.current...Date.current.since(3.months)).order(day: :desc) }
+
   def date_before_start
     errors.add(:day, 'は過去の日付は選択できません。予約画面から正しい日付を選択してください。') if day < Date.current
   end
@@ -30,5 +32,5 @@ class Reservation < ApplicationRecord
     elsif (Date.current >> 3) < day
       '3ヶ月以降の日付は選択できません。正しい日付を選択してください。'
     end
-  end
+  end  
 end

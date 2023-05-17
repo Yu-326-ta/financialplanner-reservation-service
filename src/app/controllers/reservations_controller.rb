@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
 
   def show
     @planner = Planner.find(params[:id])
-    @reservations = @planner.reservations.where(day: Date.current..).where(day: ...(Date.current >> 3)).order(day: :desc)
+    @reservations = @planner.reservations.post_reservations
   end
 
   def create
