@@ -1,6 +1,9 @@
 class PlannersController < ApplicationController
   include PlannersSessionsHelper
   def index
+    current_planner
+    @planners = Planner.all.page(params[:page])
+    @planner_reservations = @current_planner.reservations.where("start_time >= ?", DateTime.current).order(day: :asc).page(params[:page]).per(10)
   end
 
   def new
@@ -16,8 +19,9 @@ class PlannersController < ApplicationController
     if @planner.save
       reset_session
       log_in_planner @planner
-      flash[:info] = 'マイページへようこそ'
-      redirect_to planners_path
+      File.binwrite("app/assets/images/#{@planner.planner_image}", image.read)
+      flash[:info] = "マイページへようこそ"
+      redirect_to @planner
     else
       @planner.planner_image = image if image
       render 'new', status: :unprocessable_entity

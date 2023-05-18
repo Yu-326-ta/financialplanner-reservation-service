@@ -1,5 +1,3 @@
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -15,55 +13,28 @@ $gray-medium-light: #eaeaea;
   margin-top: 45px;
 }
 
+/* Home */
 body {
     padding-top: 10px;
+    color: var(--body);
   }
 
   .container-fluid {
     padding: 0px !important;
   }
 
-  .nav-item {
-    padding: 0px 30px !important;
-  }
-
   .form_style {
     padding: 150px 600px;
   }
 
-  section {
-    overflow: auto;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  .center h1 {
-    margin: 30px 0px;
-  }
-
-  .center h2 {
-    margin-bottom: 50px;
-  }
-
-  .register {
-    padding-top: 300px;
+  .home-info {
+    padding-top: 150px;
     display: flex;
     justify-content: space-around; 
   }
 
-  .planner {
-    margin-left: 70px;
-  }
-
   .button {
     text-align:center;
-    padding: 10px;
     display: flex;
   }
 
@@ -74,6 +45,95 @@ body {
   .btn-login {
     padding-left: 10px;
   }
+
+.home {
+  background-image: url("assets/cover.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(37, 39, 71, 0.7);
+  z-index: -1;
+}
+
+.home-subtitle {
+  padding-top: 10px;
+}
+
+.info {
+  padding-bottom: 150px;
+  text-shadow: 2px 2px 3px gray;
+}
+
+.btn-login {
+  margin-left: 5px !important;
+}
+
+.client {
+  margin-left: 400px !important;
+}
+
+.planner {
+  margin-left: 100px;
+}
+
+.home-card {
+  box-shadow: 2px 2px 4px gray;
+}
+
+.home-card-button {
+  box-shadow: 2px 2px 4px gray;
+}
+
+/* navbar */
+.navbar .nav-link {
+  color: white !important;
+}
+
+.about-icon {
+  margin-top: 6px !important;
+  margin-left: 5px !important;
+}
+
+.mypage-icon {
+  margin-top: 7px !important;
+  margin-left: 5px !important;
+}
+
+.reserved-icon {
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.nav-link:hover::after {
+  content: '';
+  opacity: 1;
+  height: 2px;
+  width: 100%;
+  background-color: yellow;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
   /* forms */
 
@@ -128,10 +188,19 @@ input {
   padding-bottom: 30px;
 }
 
+.form-badge {
+  margin: 0px 0px 7px 5px !important;
+}
+
+.register {
+  margin-bottom: 150px;
+}
+
 /* reservations */
 .reservation_h1 {
   padding-top: 80px;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 3px #666;
 }
 
 td a {
@@ -144,6 +213,7 @@ td a {
 
 #mypage-title {
   padding-top: 80px;
+  text-shadow: 2px 2px 3px #666;
 }
 
 h3 {
@@ -157,4 +227,141 @@ h3 {
 /* planner_index */
 td, th {
   vertical-align: middle;
+}
+
+/* client_profile */
+.profile-image {
+  margin-bottom: 7px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+}
+
+.profile-index-image {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-right: 20px;
+}
+
+.profile-body {
+  background-color: #00000008;
+}
+
+.planner-profile {
+  box-shadow: 4px 4px 8px gray;
+}
+
+/* planner_profile */
+.planner-card {
+  margin: 50px 280px 180px 280px !important;
+}
+
+.card-discription {
+  /*線の種類（二重線）太さ 色*/
+  border-bottom: double 5px black;
+  margin-top: 60px;
+}
+
+.card-profile {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+  margin-top: 30px;
+}
+
+.card-profile:before, .card-profile:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.card-profile:before {
+  left:0;
+} 
+
+.card-profile:after {
+  right: 0;
+}
+
+/* list or table of charges */
+.pricing-header {
+  max-width: 700px;
+}
+
+.charge-list {
+  box-shadow: 2px 2px 4px gray;
+}
+
+.charge-button {
+  box-shadow: 4px 4px 8px gray !important;
+}
+
+/* help page */
+.qa-004 dt,
+.qa-004 dd {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 1em 2em 1em 14em;
+    color: #333333;
+}
+
+.qa-004 dt {
+    font-weight: 600;
+}
+
+.qa-004 dd + dt {
+    margin-top: 1em;
+}
+
+.qa-004 dt::before,
+.qa-004 dd::before {
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 13%;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 40px;
+    text-align: center;
+}
+
+.qa-004 dt::before {
+    background-color: #75bbff;
+    content: 'Q';
+}
+
+.qa-004 dd::before {
+    background-color: #ff8d8d;
+    content: 'A';
+}
+
+.qa-first {
+  margin-top: 50px !important;
+}
+
+/* about page */
+.about_h1 {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.about_p {
+  font-weight: bold;
+}
+
+.carousel-item img {
+  width: 1000px;
+  height: 700px;
 }

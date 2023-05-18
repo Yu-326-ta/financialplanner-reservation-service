@@ -2,7 +2,7 @@
   .row
     .col-12.text-center
       h1.reservation_h1
-        | プランナー一覧
+        | Planners
     .col-12.mt-3
       table.table.table-striped
         thead
@@ -20,8 +20,8 @@
         tbody
           - @planners.each do |planner| 
             tr
-              th[scope='row']
-                = planner.id
+              th[scope="row"]
+                = image_tag "#{planner.planner_image}", class: 'profile-index-image'
               td
                 = planner.name
               td
@@ -29,6 +29,6 @@
               td
                 button type='button' class='btn btn-outline-primary' onclick="location.href='planners/#{planner.id}'" 詳細ページ 
               td
-                button type='button' class='btn btn-outline-primary' onclick="location.href='reservations/#{planner.id}'" 予約ページ
+                button type="button" class="btn btn-primary" onclick="location.href='reservations/#{planner.id}'" 予約ページ
     .pagenation           
       = paginate @planners

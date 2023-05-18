@@ -1,1 +1,40 @@
-h1 マイページ
+.container
+  .row
+    .col-12.text-center.title
+      h1#mypage-title
+        | Reservations
+        h3
+          |
+        table.table.table-striped
+          thead
+            tr
+              th[scope="col"]
+                | 予約者氏名
+              th[scope="col"]
+                | メールアドレス
+              th[scope="col"]
+                | 予約日
+              th
+          tbody
+            - @planner_reservations.each do |planner_reservation|
+              tr
+              
+              td
+                - client = Client.find(planner_reservation.client_id)
+                - if client.client_image.nil?
+                  = image_tag "22f1fc28980b598b3c74962091c245ac.png", class: 'profile-index-image'
+                - else
+                  = image_tag "#{client.client_image}", class: 'profile-index-image'
+                = client.name
+              td 
+                = client.email
+              td
+                = "#{planner_reservation.day} "
+                = planner_reservation.time
+            - if @planner_reservations.blank?
+              tr
+
+              td
+                | 予約はありません。
+    .pagenation           
+      = paginate @planner_reservations
