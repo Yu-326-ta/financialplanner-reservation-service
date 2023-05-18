@@ -1,0 +1,96 @@
+.container
+  .row
+    .col-12.text-center.title
+      h1.about_h1
+        | About This Service 
+      p.about_p 
+        | これはファイナンシャルプランナーとファイナンシャルプランナーに相談したい方をマッチングさせるサービスです。
+
+.container
+  #carouselExampleControls.carousel.slide[data-bs-ride="carousel"]
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100[src="assets/aboutone"]
+      .carousel-item
+        img.d-block.w-100[src="assets/abouttwo"]
+      .carousel-item
+        img.d-block.w-100[src="assets/aboutthree"]
+    button.carousel-control-prev[type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev"]
+      span.carousel-control-prev-icon[aria-hidden="true"]
+      span.visually-hidden
+        | Previous
+    button.carousel-control-next[type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"]
+      span.carousel-control-next-icon[aria-hidden="true"]
+      span.visually-hidden
+        | Next
+  .row.mt-3
+    .col-12.text-center.title
+      p.about_p
+        | ファイナンシャルプランナーに相談した方はクライアントとして新規登録、またはログインを行い、予約してください。<br>ファイナンシャルプランナーとして登録したい方は、プランナーとして新規登録、またはログインを行い予約を確認してください。
+      a href=root_path 新規登録・ログインはこちら
+
+.container.pt-4
+  .row
+    .col-12.text-center.title.mb-3
+      h1.page-title.about_h1
+        | Price & Content
+      p.about_p
+        | 料金と相談内容について
+      p.about_p
+        | 初回の方は30分2000円となっており、30分以上の予約はご遠慮いただいております。<br>
+        | リピートの方は30分3000円、60分5000円となっております。また、60分の方は30分の相談内容とは別に掲載している内容についてもご相談ができます。
+      p.about_p
+        | ※ 予約についての注意点<br>
+        | 30分ごとの予約しか受け付けていないため、60分の予約をご希望の方は連続した2枠を予約してください。
+  .row.row-cols-1.row-cols-md-3.mb-3.text-center
+    .col
+      .card.mb-4.charge-list
+        .card-header.py-3
+          h4.my-0.fw-normal
+            | 初回（30分）
+        .card-body
+          h1.card-title.pricing-card-title
+            | ￥2000
+          ul.list-unstyled.mt-3.mb-4
+            li
+              | 総合的ライフプランのご相談 ✔
+            li
+              | 貯蓄・資産運用のご相談 ✔
+            li
+              | 家計の見直しのご相談 ✔
+            li
+              | 老後資金準備のご相談 ✔
+    .col
+      .card.mb-4.rounded-3.charge-list
+        .card-header.py-3
+          h4.my-0.fw-normal
+            | リピート（30分）
+        .card-body
+          h1.card-title.pricing-card-title
+            | ￥3000
+          ul.list-unstyled.mt-3.mb-4
+            li
+              | 総合的ライフプランのご相談 ✔
+            li
+              | 貯蓄・資産運用のご相談 ✔
+            li
+              | 家計の見直しのご相談 ✔
+            li
+              | 老後資金準備のご相談 ✔
+    .col
+      .card.mb-4.rounded-3.charge-list
+        .card-header.py-3
+          h4.my-0.fw-normal
+            | リピート（60分）
+        .card-body
+          h1.card-title.pricing-card-title
+            | ￥5000
+          ul.list-unstyled.mt-3.mb-4
+            li
+              | 資産形成のご相談 ✔
+            li
+              | 相続準備のご相談 ✔
+            li
+              | 教育資金のご相談 ✔
+            li
+              | NISA、iDeCoのご相談 ✔
