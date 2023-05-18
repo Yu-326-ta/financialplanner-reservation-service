@@ -48,6 +48,7 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
+        planner_image: プロフィール画像
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

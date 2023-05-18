@@ -9,6 +9,7 @@ class Planner < ApplicationRecord
                                     format: { with: VALID_EMAIL_REGEX }, 
                                     uniqueness: true
   validates :discription, length: {maximum: 1000}
+  validates :planner_image, presence: true, length: {maximum: 60}
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true  
   has_secure_password
 

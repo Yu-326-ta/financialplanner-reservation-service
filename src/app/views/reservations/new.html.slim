@@ -18,6 +18,6 @@
         = form.hidden_field :client_id, value: current_client.id
         = form.hidden_field :start_time, value: @start_time
         .submit
-          = form.submit value: '予約する', class: 'btn btn-warning mx-auto d-block'
+          = form.submit value: '予約する', class: 'btn btn-primary mx-auto d-block'
       .col-12.text-right
         = link_to '日付選択へ戻る', reservation_path(@planner.id)

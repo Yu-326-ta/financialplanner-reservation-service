@@ -1,29 +1,34 @@
-.p-3.p-sm-5.mb-4.bg-img
-  .center.jumbotron.
-    h1
-      | Welcome to the financial planner reservation service
-    h2
-      |  お金の悩みを相談してみませんか?
-
-.register
+.home.vh-100.d-flex.align-items-center'
+  .container 
     .row
-      .col-6
-        .client
-          .text
-            h4
-              | ファイナンシャルプランナーに<br>ご相談したい方
-          .button  
-            .btn-create
-              = link_to '新規登録', clients_signup_path, class: 'btn btn-lg btn-warning'
-            .btn-login
-              = link_to 'ログイン', clients_login_path, class: 'btn btn-lg btn-outline-warning'
-      .col-6
-        .planner
-          .text
-            h4
-              | ファイナンシャルプランナーの方
-          .button 
-            .btn-create
-              = link_to '新規登録', planners_signup_path, class: 'btn btn-lg btn-warning'
-            .btn-login
-              = link_to 'ログイン', planners_login_path, class: 'btn btn-lg btn-outline-warning'
+      .col-lg-7.mx-auto.text-center
+        h1.home-title Financial Planner Reservation Service
+        h4.home-subtitle.text-white Welcome to the financial planner reservation service. If you have any questions about money, why not talk to a professional?
+
+.home-info
+    .row
+      .info.text-center
+        h2 ↓Register from the button below↓      
+.row.register
+  .col-6
+    .card.w-50.text-center.client
+      .card-body.justify-content-evenly
+        h5.card-title
+          | Client
+        p.card-text
+          | If you would like to consult with a financial planner, please register below.
+        a.btn.btn-primary[href = clients_signup_path]
+          | Sign up
+        a.btn.btn-outline-primary.btn-login[href = clients_login_path]
+          | Login
+  .col-6
+    .card.w-50.text-center.planner
+      .card-body
+        h5.card-title
+          | Finacial Planner
+        p.card-text
+          | If you would like to register as a financial planner, please register below.
+        a.btn.btn-primary[href = planners_signup_path]
+          | Sign up
+        a.btn.btn-outline-primary.btn-login[href = planners_login_path]
+          | Login

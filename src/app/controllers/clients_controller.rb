@@ -17,8 +17,9 @@ class ClientsController < ApplicationController
     if @client.save
       reset_session
       log_in_client @client
-      flash[:info] = 'マイページへようこそ'
-      redirect_to clients_path
+      File.binwrite("app/assets/images/#{@client.client_image}", image.read) if image
+      flash[:info] = "マイページへようこそ"
+      redirect_to @client
     else
       @client.client_image = image if image
       render 'new', status: :unprocessable_entity
