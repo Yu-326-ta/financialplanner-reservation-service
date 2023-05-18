@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   delete 'planners/logout',  to: 'planners_sessions#destroy'
   resources :clients
   resources :planners
+  resources :reservations
 end

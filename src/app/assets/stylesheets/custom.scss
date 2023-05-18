@@ -20,11 +20,15 @@ body {
   }
 
   .container-fluid {
-    padding: 0px;
+    padding: 0px !important;
   }
 
-  .row {
-    padding: 150px 500px;
+  .nav-item {
+    padding: 0px 30px !important;
+  }
+
+  .form_style {
+    padding: 150px 600px;
   }
 
   section {
@@ -48,7 +52,7 @@ body {
   }
 
   .register {
-    padding-top: 200px;
+    padding-top: 300px;
     display: flex;
     justify-content: space-around; 
   }
@@ -118,4 +122,39 @@ input {
   width: 20px;
   height: 30px;
   margin-top: 5px;
+}
+
+.form_h1 {
+  padding-bottom: 30px;
+}
+
+/* reservations */
+.reservation_h1 {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+td a {
+  text-decoration: none !important;
+}
+
+#reservation-form {
+  padding: 150px 150px;
+}
+
+#mypage-title {
+  padding-top: 80px;
+}
+
+h3 {
+  padding-top: 50px;
+}
+
+.new-form {
+  padding-top: 30px;
+}
+
+/* planner_index */
+td, th {
+  vertical-align: middle;
 }

@@ -1,0 +1,43 @@
+.simple-calendar
+  .calendar-heading
+  table.table-striped.table
+    thead
+      tr
+        th
+          | 時間
+        - date_range.slice(0, 7).each do |day|
+          th
+            = t('date.abbr_day_names')[day.wday]
+    tbody
+      - date_range.each_slice(7) do |week|
+        tr
+
+        td
+        - week.each do |day|
+          = content_tag :td, class: calendar.td_classes_for(day) do
+            - if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block)
+              - capture_haml(day, sorted_events.fetch(day, []), &passed_block)
+            - else
+              - passed_block.call day, sorted_events.fetch(day, [])
+        - times_array.each do |time|
+          tr
+
+          td
+            = time
+          - week.each do |day|
+            td
+              - if check_reservation(@reservations, day, time) || day.strftime('%a') == 'Sun' || check_saturday_reservation(day, time)
+                = '×'
+              - else
+                = link_to new_reservation_path(day: day, time: time, planner_id: @planner.id) do
+                  = '○'
+  .calender_navigation 
+    nav aria-label='Page navigation'
+      ul class='pagination'
+        li class='page-item'
+          a class='page-link' href="#{calendar.url_for_previous_view}" < 前週
+        li class='page-item active' aria-current='page'
+          a class='page-link' href='' 1週間
+        li class='page-item'
+          a class='page-link' href="#{calendar.url_for_next_view}" 翌週 >
+        
