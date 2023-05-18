@@ -72,6 +72,7 @@ body {
 
 .info {
   padding-bottom: 150px;
+  text-shadow: 2px 2px 3px gray;
 }
 
 .btn-login {
@@ -84,6 +85,14 @@ body {
 
 .planner {
   margin-left: 100px;
+}
+
+.home-card {
+  box-shadow: 2px 2px 4px gray;
+}
+
+.home-card-button {
+  box-shadow: 2px 2px 4px gray;
 }
 
 /* navbar */
@@ -171,6 +180,7 @@ input {
 .reservation_h1 {
   padding-top: 80px;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 3px #666;
 }
 
 td a {
@@ -183,6 +193,7 @@ td a {
 
 #mypage-title {
   padding-top: 80px;
+  text-shadow: 2px 2px 3px #666;
 }
 
 h3 {
@@ -207,9 +218,66 @@ td, th {
 }
 
 .profile-index-image {
-  // margin-bottom: 7px;
   width:50px;
   height:50px;
   border-radius:50%;
   margin-right: 20px;
+}
+
+.profile-body {
+  background-color: #00000008;
+}
+
+.planner-profile {
+  box-shadow: 4px 4px 8px gray;
+}
+
+/* planner_profile */
+.planner-card {
+  margin: 50px 280px 180px 280px !important;
+}
+
+.card-discription {
+  /*線の種類（二重線）太さ 色*/
+  border-bottom: double 5px black;
+  margin-top: 60px;
+}
+
+.card-profile {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+  margin-top: 30px;
+}
+
+.card-profile:before, .card-profile:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.card-profile:before {
+  left:0;
+} 
+
+.card-profile:after {
+  right: 0;
+}
+
+/* list or table of charges */
+.pricing-header {
+  max-width: 700px;
+}
+
+.charge-list {
+  box-shadow: 2px 2px 4px gray;
+}
+
+.charge-button {
+  box-shadow: 4px 4px 8px gray !important;
 }
