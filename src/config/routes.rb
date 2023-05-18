@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/planners/signup', to: 'planners#new'
   get '/clients/signup', to: 'clients#new'
   get '/help', to: 'static_pages#help'
+  get '/about', to: 'static_pages#about'
   get    'clients/login',   to: 'clients_sessions#new'
   post   'clients/login',   to: 'clients_sessions#create'
   delete 'clients/logout',  to: 'clients_sessions#destroy'

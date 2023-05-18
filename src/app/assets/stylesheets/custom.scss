@@ -115,6 +115,26 @@ body {
   margin-left: 5px !important;
 }
 
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.nav-link:hover::after {
+  content: '';
+  opacity: 1;
+  height: 2px;
+  width: 100%;
+  background-color: yellow;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
   /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -280,4 +300,68 @@ td, th {
 
 .charge-button {
   box-shadow: 4px 4px 8px gray !important;
+}
+
+/* help page */
+.qa-004 dt,
+.qa-004 dd {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 1em 2em 1em 14em;
+    color: #333333;
+}
+
+.qa-004 dt {
+    font-weight: 600;
+}
+
+.qa-004 dd + dt {
+    margin-top: 1em;
+}
+
+.qa-004 dt::before,
+.qa-004 dd::before {
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 13%;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 40px;
+    text-align: center;
+}
+
+.qa-004 dt::before {
+    background-color: #75bbff;
+    content: 'Q';
+}
+
+.qa-004 dd::before {
+    background-color: #ff8d8d;
+    content: 'A';
+}
+
+.qa-first {
+  margin-top: 50px !important;
+}
+
+/* about page */
+.about_h1 {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.about_p {
+  font-weight: bold;
+}
+
+.carousel-item img {
+  width: 1000px;
+  height: 700px;
 }
