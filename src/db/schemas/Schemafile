@@ -3,7 +3,7 @@ create_table :clients do |t|
   t.string :email, null: false, limit: 255, unique: true
   t.string :password_digest, null: false
   t.string :remember_digest  
-  t.blob :planner_image
+  t.blob :client_image
   t.index :email, unique: true
   t.datetime :created_at, null: false
   t.datetime :updated_at, null: false
