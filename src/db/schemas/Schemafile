@@ -25,7 +25,7 @@ create_table :reservations do |t|
   t.belongs_to :client, null: false, foreign_key: true
   t.belongs_to :planner, null: false, foreign_key: true
   t.date :day
-  t.string :time:
+  t.string :time
   t.datetime :created_at, null: false
   t.datetime :updated_at, null: false
   t.datetime :start_time, null: false
