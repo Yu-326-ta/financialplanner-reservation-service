@@ -8,27 +8,27 @@
 .home-info
     .row
       .info.text-center
-        h2 ↓Register from the button below↓      
+        h2 ↓ Register from the button below ↓      
 .row.register
   .col-6
-    .card.w-50.text-center.client
+    .card.w-50.text-center.client.home-card
       .card-body.justify-content-evenly
         h5.card-title
           | Client
         p.card-text
           | If you would like to consult with a financial planner, please register below.
-        a.btn.btn-primary[href = clients_signup_path]
+        a.btn.btn-primary.home-card-button.mx-3[href = clients_signup_path]
           | Sign up
-        a.btn.btn-outline-primary.btn-login[href = clients_login_path]
+        a.btn.btn-outline-primary.btn-login.home-card-button.mx-3[href = clients_login_path]
           | Login
   .col-6
-    .card.w-50.text-center.planner
+    .card.w-50.text-center.planner.home-card
       .card-body
         h5.card-title
           | Finacial Planner
         p.card-text
           | If you would like to register as a financial planner, please register below.
-        a.btn.btn-primary[href = planners_signup_path]
+        a.btn.btn-primary.home-card-button.mx-3[href = planners_signup_path]
           | Sign up
-        a.btn.btn-outline-primary.btn-login[href = planners_login_path]
+        a.btn.btn-outline-primary.btn-login.home-card-button.mx-3[href = planners_login_path]
           | Login
