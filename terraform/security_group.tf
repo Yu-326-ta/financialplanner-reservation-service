@@ -28,3 +28,12 @@ resource "aws_security_group_rule" "fptask_sg_in_http" {
   to_port           = 80
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
+resource "aws_security_group_rule" "fptask_sg_in_tcp" {
+  security_group_id = aws_security_group.fptask_sg.id
+  type              = "ingress"
+  protocol          = "tcp"
+  from_port         = 3000
+  to_port           = 3000
+  cidr_blocks       = ["0.0.0.0/0"]
+}

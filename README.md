@@ -40,3 +40,23 @@ docker compose.yml ファイルがあるディレクトリで以下のコマン�
 2. `docker-compose run web rails db:create` コマンドでデータベースを作成
 3. `docker-compose run web bundle exec rails ridgepole:apply` コマンドでデータベースにテーブル作成
 4. localhost:3000にアクセス
+
+## AWS構成図
+
+![構成図](src/app/assets/images/aws_resource.png)
+
+## AWSの環境変数の設定
+aws-credentialsファイルを自分のAWSアカウントもしくはIAMに基づいて設定する．
+
+```
+export AWS_ACCESS_KEY_ID=YOUR_IAM_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=YOUR_IAM_SECRET_KEY
+```
+
+## リソースの作成
+以下のコマンドを実行すればリソースが作成される．
+
+```
+terraform init
+terraform apply
+```
